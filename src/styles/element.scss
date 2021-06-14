@@ -1,0 +1,36 @@
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+$--color-primary: rgb(30, 122, 220);
+$--color-primary-dark: rgb(8, 17, 40);
+$--color-primary-sub: rgb(30, 122, 220);
+$--color-text-button-primary: #E4E7ED;
+
+@import "~element-ui/packages/theme-chalk/src/index";
+
+@include b(button) {
+  @include m(text) {
+    border-color: transparent;
+    color: $--color-text-button-primary;
+    background: transparent;
+    padding-left: 8px;
+    padding-right: 8px;
+
+    &:hover,
+    &:focus {
+      color: white;
+      border-color: transparent;
+      background-color: mix($--color-white, $--color-primary-dark, 5%);
+    }
+    &:active {
+      color: white;
+      border-color: transparent;
+      background-color: transparent;
+    }
+
+    &.is-disabled,
+    &.is-disabled:hover,
+    &.is-disabled:focus {
+      border-color: transparent;
+    }
+  }
+}
